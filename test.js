@@ -35,8 +35,16 @@
 // readStream.pipe(writeStream);
 
 const http = require('http');
+const _ = require('lodash');
+
+
 const server = http.createServer((req, res) => {
     //console.log(req.url ,req.method);
+
+    //lodash
+
+    const num = _.random(0, 20);
+    console.log(num);
     //set header
     res.setHeader('Content-Type','text/html');
 //send html file
@@ -60,3 +68,4 @@ fs.readFile('./views/index.html', (err, data) =>{
 server.listen('3000','localhost', () => {
     console.log('Listening on port 3000');
 });
+
